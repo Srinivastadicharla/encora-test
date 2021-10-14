@@ -1,0 +1,61 @@
+<div class="container-fluid login-body center-align">
+  <mat-card class="example-card">
+    <div class="project-title">AXY Ltd</div>
+    <div class="">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-card-header class="center-align">
+          <mat-card-title>SIGN IN</mat-card-title>
+        </mat-card-header>
+        <mat-card-content
+          class="center-align"
+          style="text-align: center; position: relative"
+        >
+          <mat-error *ngIf="error" class="main-error">
+            {{ error }}
+          </mat-error>
+          <mat-form-field class="example-full-width">
+            <input
+              matInput
+              placeholder="Email"
+              formControlName="email"
+              [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+            />
+
+            <mat-error *ngIf="f.email.invalid"
+              >{{ getErrorMessage("email") }}
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input
+              matInput
+              type="password"
+              formControlName="password"
+              placeholder="Password"
+              [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+            />
+            <mat-error *ngIf="f.password.invalid"
+              >{{ getErrorMessage("password") }}
+            </mat-error>
+          </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions
+          class="center-align"
+          style="text-align: center; position: relative"
+        >
+          <button
+            mat-raised-button
+            color="primary"
+            [disabled]="loading || this.loginForm.invalid"
+          >
+            Login
+          </button>
+          <img
+            *ngIf="loading"
+            class="pl-2"
+            src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
+          />
+        </mat-card-actions>
+      </form>
+    </div>
+  </mat-card>
+</div>

@@ -1,0 +1,17 @@
+table {
+  width: 80%;
+  margin: auto;
+}
+mat-form-field {
+  left: 10%;
+}
+.add {
+  position: absolute;
+  right: 10%;
+  top: 119px;
+}
+.center-align {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,43 @@
+<h1 mat-dialog-title class="header">{{data}}</h1>
+
+<form [formGroup]="addForm" class="add-contact">
+  <mat-form-field>
+    <input formControlName="name" matInput placeholder="Name" required />
+    <mat-error *ngIf="addForm.controls['name'].errors?.required"
+      >{{validationMsg("name")}}
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput formControlName="country" placeholder="Country" required />
+    <mat-error *ngIf="addForm.controls['country'].errors?.required"
+      >{{validationMsg("country")}}
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput formControlName="phone" placeholder="Phone" required />
+    <mat-error *ngIf="addForm.controls['phone'].errors?.required"
+      >{{validationMsg("phone")}}
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      formControlName="companyId"
+      placeholder="Company Id"
+      required
+    />
+    <mat-error *ngIf="addForm.controls['companyId'].errors?.required"
+      >{{validationMsg("companyId")}}
+    </mat-error>
+  </mat-form-field>
+  <div class="button-row center-align">
+    <button
+      mat-raised-button
+      color="primary"
+      [disabled]="!addForm.valid"
+      (click)="saveClick(addForm.value)"
+    >
+      Save
+    </button>
+  </div>
+</form>

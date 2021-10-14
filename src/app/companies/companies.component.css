@@ -1,0 +1,17 @@
+.example-card {
+  border-radius: 4px;
+  width: 50%;
+  margin: 30px 110px;
+  display: flex;
+}
+mat-card-title-group {
+  flex-direction: column;
+  width: 70%;
+}
+mat-card-content {
+  margin-top: 16px;
+}
+.mat-card-sm-image {
+  width: 250px;
+  height: 150px;
+}
